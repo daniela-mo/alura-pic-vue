@@ -17,7 +17,8 @@
           <meu-botao
             tipo="button"
             rotulo="REMOVER"
-            @click.native="remove(foto)"
+            @botaoAtivado="remove(foto)"
+            confirmacao="true"
           />
           <!-- Como um component não suporta o comportamento do @click, precisamos passar o .native  -->
         </meu-painel>

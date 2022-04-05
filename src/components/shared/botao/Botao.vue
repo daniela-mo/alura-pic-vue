@@ -4,7 +4,19 @@
 
 <script>
 export default {
-  props: ["tipo", "rotulo"]
+  props: ["tipo", "rotulo", "confirmacao"],
+
+  methods: {
+    disparaAcoa() {
+      if (this.confirmacao) {
+        if (confirm("Confirma operação?")) {
+          this.$emit("botaoAtivado");
+        }
+        return;
+      }
+      this.$emit("botaoAtivado");
+    }
+  }
 };
 </script>
 
