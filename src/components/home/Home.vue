@@ -12,15 +12,20 @@
     <ul class="lista-fotos">
       <li class="lista-fotos-item" v-for="foto of fotosComFiltro">
         <meu-painel :titulo="foto.titulo">
-          <imagem-responsiva :url="foto.url" :titulo="foto.titulo" />
+          <imagem-responsiva
+            v-meu-tranform="{ incremento: 15, animate: true }"
+            :url="foto.url"
+            :titulo="foto.titulo"
+          />
 
           <meu-botao
             tipo="button"
             rotulo="REMOVER"
             @botaoAtivado="remove(foto)"
-            confirmacao="true"
+            :confirmacao="true"
+            estilo="padrao"
           />
-          <!-- Como um component não suporta o comportamento do @click, precisamos passar o .native  -->
+          <!-- o bind verifica se a expressao passada apos o igual e identifica seu tipo -->
         </meu-painel>
       </li>
     </ul>
